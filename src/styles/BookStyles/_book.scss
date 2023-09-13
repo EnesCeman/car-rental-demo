@@ -1,0 +1,354 @@
+@use "../global" as *;
+
+.book-section {
+  position: relative;
+  background: linear-gradient(to bottom, $bg-gray 20%, $bg-white 80%);
+}
+
+.book-content {
+  margin: 0 auto;
+  margin-bottom: 10rem;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-white;
+    width: 100%;
+    padding: 4rem 4.5rem 5rem 5.5rem;
+    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
+    height: auto;
+    position: relative;
+    z-index: 4;
+    color: $text-black;
+    border-radius: 5px;
+    background-image: url("/src/images/book-car/book-bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h2 {
+      font-size: $h3-size;
+      font-weight: 700;
+      margin-bottom: 2.7rem;
+    }
+
+    .box-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 2rem;
+
+      b {
+        color: $text-orange;
+      }
+
+      @media (max-width: 1000px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &__car-type {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: $p-size;
+          font-weight: 600;
+          margin-bottom: 1.2rem;
+
+          .fa-icons {
+            color: $text-orange;
+            vertical-align: center;
+          }
+        }
+
+        select {
+          font-size: 1.5rem;
+          padding: 1.2rem 1.3rem;
+          color: #ababab;
+          font-family: $text-font;
+          border: 1px solid #ccd7e6;
+          border-radius: 3px;
+          font-weight: 500;
+          outline: none;
+        }
+      }
+
+      &__car-time {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: $p-size;
+          font-weight: 600;
+          margin-bottom: 1.2rem;
+
+          .fa-icons {
+            color: $text-orange;
+          }
+        }
+
+        input {
+          outline: none;
+          color: #ababab;
+          padding-right: 3rem;
+          border: 1px solid #ccd7e6;
+        }
+
+        ::-webkit-datetime-edit {
+          padding: 1.3rem 1.3rem;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+          cursor: pointer;
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    button {
+      padding: 1.3rem 1.3rem;
+      height: fit-content;
+      align-self: self-end;
+      border: none;
+      font-family: $text-font;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: white;
+      background-color: $text-orange;
+      box-shadow: 0 10px 15px rgb(255 83 48 / 35%);
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        box-shadow: 0 10px 15px rgb(255 83 48 / 55%);
+      }
+    }
+  }
+}
+
+.error-message {
+  background-color: pink;
+  margin-bottom: 2.5rem;
+  padding: 1.3rem 1.3rem;
+  font-size: $p-size;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  border-radius: 5px;
+  color: #721c24;
+  font-weight: 600;
+}
+
+.booking-done {
+  background-color: #c3fabe;
+  margin-bottom: 2.5rem;
+  padding: 1.3rem 1.3rem;
+  font-size: $p-size;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  border-radius: 5px;
+  color: #2a6817;
+  font-weight: 600;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 10;
+
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 80rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  background-color: white;
+  border: 2px solid white;
+  overflow: scroll;
+  color: $text-black;
+  height: 90vh;
+  padding-right: 2px;
+
+  &__title {
+    background-color: $text-orange;
+    color: white;
+    font-family: $titles-font;
+    padding: 1.3rem 1.3rem;
+
+    h3 {
+      text-transform: uppercase;
+      font-size: $h3-size;
+      font-weight: 700;
+    }
+  }
+
+  &__message {
+    background-color: #ffeae6;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+
+    padding: 1.7rem 1.7rem;
+
+    h3 {
+      font-size: 2rem;
+      margin-top: 0.7rem;
+      color: $text-orange;
+    }
+
+    p {
+      margin-bottom: 0.7rem;
+      font-family: $text-font;
+      font-size: $p-size;
+      color: $text-gray;
+      font-weight: 550;
+    }
+  }
+
+  &__booking-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 3rem;
+    border-bottom: 1px solid $text-gray;
+
+    .info-confirmation {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      h3 {
+        color: $text-orange;
+        font-size: $h3-size;
+      }
+    }
+  }
+}
+
+.details-container {
+  padding-left: 1.5rem;
+  font-family: $titles-font;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+
+  .booking-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h5 {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    p {
+      font-size: 1.6rem;
+      color: $text-gray;
+    }
+  }
+}
+
+.selected-vehicle {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h5 {
+    font-size: $h3-size;
+    span {
+      color: $text-orange;
+      //   font-size: $h3-size;
+    }
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.personal-info {
+  padding: 3rem 3rem;
+  padding-bottom: 0;
+
+  h3 {
+    color: $text-orange;
+    font-size: $h3-size;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+}
+
+.info-form {
+  &__2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  &__1-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+    gap: 2rem;
+  }
+
+  .single-field {
+    display: flex;
+    flex-direction: column;
+    color: #777777;
+    gap: 0.5rem;
+
+    label {
+      font-size: $p-size;
+      font-weight: 500;
+    }
+
+    input {
+      font-size: $p-size;
+      padding: 1rem 1rem;
+      background-color: #dbdbdb;
+      border: none;
+
+      &:focus {
+        outline: $text-orange solid 1px;
+      }
+    }
+
+    b {
+      color: $text-orange;
+    }
+  }
+}
+
+.reserve-button {
+  background-color: #dbdbdb;
+  padding: 3rem;
+  text-align: right;
+  margin: 0 -3rem;
+  margin-top: 1rem;
+
+  button {
+    background-color: $text-orange;
+    color: white;
+    padding: 1rem 1rem;
+    font-size: $h3-size;
+    font-weight: bold;
+    border: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fe3516;
+    }
+  }
+}
