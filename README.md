@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Car Rental Website Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is inspired by a car rental website example from the official React website, which can be found [here](https://reactjsexample.com/a-car-rental-website-built-with-react/). The purpose of this project was to delve into React and CSS, particularly focusing on CSS styling and various aspects of front-end development. Here are some key points about this project:
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+- **Learning Opportunity**: The motivation behind this project was to gain a deeper understanding of React and enhance CSS skills. After completing several backend-focused projects, it was an excellent opportunity to focus on the frontend.
 
-### `npm start`
+- **Partial Implementation**: The entire car rental website was not replicated. Instead, specific components and features that piqued interest were implemented. This includes creating a car picker, designing a modal, and recreating an interactive FAQ section with dropdown menus.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **SASS Exploration**: The project originally utilized SASS, a CSS preprocessor. This project served as an opportunity to learn how to set up SCSS files and compile them into the main CSS file used in the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Create React App (CRA)**: The project was bootstrapped using Create React App (CRA), which provides a convenient starting point for React applications.
 
-### `npm test`
+- **Modular Modal Component**: A departure from the original example, the modal functionality was refactored into a separate component, enhancing modularity and maintainability.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **State Management**: Unlike the example, where state management was distributed, this project employs a single object to manage multiple states more efficiently.
 
-### `npm run build`
+- **FontAwesome Integration**: The original example used `<i>` tags for FontAwesome icons, which resulted in issues when deployed. This project successfully integrated FontAwesome icons using `<FontAwesomeIcon>` components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **CSS Animations**: An animated loader was implemented using CSS, contributing to a more dynamic user experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **DatePicker Enhancement**: The date picker functionality was improved by setting limits on selectable dates, making it more realistic. The date-fns library was employed for this purpose.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Broadened CSS Skillset**: Through this project, a wide range of CSS skills was developed, leading to increased confidence in handling complex styling and design challenges.
 
-### `npm run eject`
+Feel free to explore the project, and don't hesitate to reach out for any questions or contributions!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository to your local machine.
+2. Run `npm install` to install the project dependencies.
+3. Start the development server with `npm start`.
+4. Open your browser and navigate to `http://localhost:3000` to view the project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project has been deployed using GitHub Pages. You can access the live demo [here](https://enesceman.github.io/car-rental-demo/).
 
-## Learn More
+## Additional Information
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For more detailed information about the project, including installation instructions and usage guidelines, please refer to the project's documentation and source code.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy coding!
